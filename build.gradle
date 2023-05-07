@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.5'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'net.devh:grpc-server-spring-boot-starter:2.12.0.RELEASE'
+	implementation files('libs/grpc-Interfacae2-1.0-SNAPSHOT.jar')
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// Jackson Core 모듈
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.12.4'
+	// Jackson Databind 모듈
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
+	// Jackson Annotations 모듈 (선택적으로 사용)
+	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.4'
+}
+
+test {
+	useJUnitPlatform()
+}
